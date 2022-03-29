@@ -6,7 +6,7 @@
  в противном случае вывести в консоль сумму к оплате без скидки.
 */
 let sumN = 8000;
-let totalSum = (sumN > 700) ? ' (sumN / 100) * 10; ' : ' sumN ';
+let totalSum = (sumN > 700) ? ' (sumN / 100) * 10 ' : ' sumN ';
 console.log(totalSum);
 
 // tast 2
