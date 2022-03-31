@@ -5,8 +5,8 @@
 то вывести в консоль сумму к оплате с учетом скидки в 10%,
  в противном случае вывести в консоль сумму к оплате без скидки.
 */
-let sumN = 8889822;
-let totalSum = (sumN > 100000) ?  (sumN / 100) * 10  :  sumN ;
+let sumN = 1000;
+let totalSum = (sumN > 700) ?  (sumN / 100) * 10  :  sumN ;
 console.log(totalSum);
 
 // tast 2
