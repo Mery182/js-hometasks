@@ -155,8 +155,8 @@ let total;
            middleNumber = Math.floor((max - min) / 2 + min);
        } else {
            break;
-       };
-   };
+       }
+   }
     alert(`Число равно ${middleNumber}!`);
  
   
