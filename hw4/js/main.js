@@ -22,17 +22,22 @@ console.log(forNumbers);
 */
 let newM = [4, 6, 6, 3, 5, 66, 7]; // создали пустой массив
 console.log(newM);
+let minN;
+let maxN;
 for (let i = 0; i < newM.length; i++) {
     newM[i] = Math.floor(Math.random() * (300 - 5) + 5); // присваимаем новые рандомные значения от 5 до 300 (округляя к низу)
-    let newM2 = newM.slice(); //  скопировали newM в newN2
-    newM2 = newM2.sort((a, b) => a - b); // сортируем методом по возрастанию
-    let minN = newM2[0]; // знаем min значение
-    let maxN = newM2[6]; // знаем max значение
-    //  let sumN = (minN + maxN) - maxN;
-    console.log(newM);
-    console.log(newM.includes(minN));
-    console.log(newM.includes(maxN));
+   
 }
+console.log(newM);
+newM = newM.sort((a, b) => a - b); // сортируем методом по возрастанию
+console.log(newM);
+minN = newM[0]; // знаем min значение
+maxN = newM[newM.length - 1 ]; // знаем max значение
+//  let sumN = (minN + maxN) - maxN;
+newM[0] = maxN;
+newM[newM.length - 1] = minN;
+console.log(newM);
+
  /// не знаю что делать дальше без 
 
 /*
@@ -49,10 +54,10 @@ while(true) {
     let stringA = prompt('Введите название животного:');
     if ( stringA == '0' || stringA == '' || stringA == null) { // проверяем на валидность данных
         break;
-    } else if (animals.includes(stringA)){
+    } 
+    if (animals.includes(stringA)){
         continue; // на новую итерацию отправляемся
-    } else {
+    } 
         animals.push(stringA)
-        }
     console.log(animals);
 }
