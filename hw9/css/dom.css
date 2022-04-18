@@ -37,7 +37,7 @@ th, td{
     padding: 10px 20px;
     border: 1px solid #000;
 }
-td:nth-child(1){
+td:nth-child(2n+1){
     background-color: red;
 }
 .n {
@@ -53,6 +53,7 @@ td:nth-child(1){
 #square_blok td{
     padding: 50px 50px;
     border: 1px solid #000;
+    background-color: white;
 }
 
 /* the end  */

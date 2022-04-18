@@ -147,27 +147,36 @@ let table = document.createElement("table");
 function generateTable(arr) {
     let row;
     let cell;
-// let title = Object.keys(arr[0]);
-// let firstRow = table.insertRow();
-// for(let title of title){
-//     let cell = firstRow.insertCell();
-//     cell.innerText = title;
-// }
-// for (let elem of arr) {
-//  let  row = table.insertRow();
-//  for(let prop in elem){
- // let cell = row.insertCell();
-//  cell.innerHTML = elem[prop];
+    // let title = Object.keys(arr[0]);
+    // let firstRow = table.insertRow();
+    // for(let title of title){
+    //     let cell = firstRow.insertCell();
+    //     cell.innerText = title;
+    // }
+    // for (let elem of arr) {
+    //  let  row = table.insertRow();
+    //  for(let prop in elem){
+    // let cell = row.insertCell();
+    //  cell.innerHTML = elem[prop];
 
-//  }
-// }
-  //  генерируем ячейки и ряды
-    for (let i = 0; i < arr.length; i++) {
+    //  }
+    // }
+ // 
+    let row1 = table.insertRow(); // это первый заголов без циклов - он статичный
+    let keys = Object.keys(arr[0])  // это самый первый жлемент массивва
+    let firstRow = table.insertRow();
+    console.log(keys);
+    for (let key of keys) {
+      let cell = firstRow.insertCell();
+        cell.innerText = key.toUpperCase();
+    }
+//  конец заголовка
+    for (let i = 0; i < arr.length; i++) { 
         row = table.insertRow(); //  ряд (строка)        
         for (let k = 0; k < Object.values(arr[i]).length; k++) {
-            cell = row.insertCell(); //ячейки
+            cell = row.insertCell(); // количество ячейки определяется количеством значений 
             cell.innerText = Object.values(arr[i])[k];
-            
+
             // for (let artic in arr) {
             //     for (let m in arr[artic]) {
             //         for (let l = 0; l < arr.length; l++) {
@@ -175,19 +184,19 @@ function generateTable(arr) {
             //         }    
             //     }   
             //    }   
-    }       
-    }     
-       
+        }
+    }
+
     // // dcfs 
     // for (var i = 0; i < arr.length; i++) {
     //     for (let artic in arr) {
     //      cell.innerHTML = `${artic.title}`;
-      
+
     //     }
     // }
     // //ljlk
-    
-    
+
+
 };
 tab.append(table);
 
@@ -202,29 +211,40 @@ let res = generateTable(articles);
 */
 let squere = document.getElementById('square_blok');
 let n_blok = document.createElement('table');
-
+let prises = {
+    headphones: "Наушники",
+    book: "Книга",
+    postcard: "Открытка"
+};
 function generateField(n) {
     let row = [];
     let cell = [];
-    if (n < 3) { 
-        return false; // если меньше прерываем функцию
+    if (n < 3) {
+        return; // если меньше прерываем функцию
     }
     // генерируем ячейки и ряды
     for (let i = 0; i < n; i++) {
         row = n_blok.insertRow(); //  ряд
         for (let k = 0; k < n; k++) {
             cell = row.insertCell(); //ячейки
-        
+            // создаем массив ячеек
+
         }
     }
+   
     // к массиву ячеей обращаться и рандомным трем
+    let new_cell = document.querySelectorAll('td');
+    console.log(new_cell);
+    for(let w = 0; w <3; w++){
+        let rand = Math.floor(Math.random() * new_cell.length);
+        console.log(prises);
+        new_cell[rand].innerHTML = Object.values(prises)[w];
+    }
+    
 };
 squere.append(n_blok);
+
+
 let result = generateField(4);
 
 
-let prises = {
-    headphones: "Наушники",
-    book: "Книга",
-    postcard: "Открытка"
-};
