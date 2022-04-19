@@ -1,0 +1,18 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    box-sizing: border-box;
+}
+.cards-section {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1364px;
+    margin: 0 auto;
+
+}
+.card {
+    margin: 10px auto;
+}

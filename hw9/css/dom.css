@@ -1,0 +1,68 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    
+}
+* {
+    box-sizing: border-box;
+}
+.books-section {
+    margin: 0 auto;
+    
+}
+.all_ganre {
+    flex-direction: column; 
+    margin: 20px;
+}
+.books {
+    display: flex;
+    justify-content: space-between;
+   
+}
+.books > article {
+    width:30%;
+    flex-direction: column;
+}
+.books > article img {
+    width: 100%;
+}
+/* table start blok */
+table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    margin: 0 auto;
+}
+th, td{
+    padding: 10px 20px;
+    border: 1px solid #000;
+}
+td:nth-child(2n+1){
+    background-color: red;
+}
+.n {
+    padding: 10px 20px;
+    border: 1px solid #000;
+}
+/* the end blok */
+/* squere blok start */
+#square_blok {
+    margin-top: 30px;
+}
+#square_blok th, 
+#square_blok td{
+    padding: 50px 50px;
+    border: 1px solid #000;
+    background-color: white;
+}
+
+/* the end  */
+@media screen and (max-width:786px){
+    .books {
+        flex-direction: column;
+    }
+    .books > article {
+        width: 100%;
+        margin-bottom: 13px;
+    }
+}
