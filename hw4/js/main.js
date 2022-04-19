@@ -28,17 +28,30 @@ for (let i = 0; i < newM.length; i++) {
     newM[i] = Math.floor(Math.random() * (300 - 5) + 5); // присваимаем новые рандомные значения от 5 до 300 (округляя к низу)
    
 }
-console.log(newM);
-newM = newM.sort((a, b) => a - b); // сортируем методом по возрастанию
-console.log(newM);
-minN = newM[0]; // знаем min значение
-maxN = newM[newM.length - 1 ]; // знаем max значение
+console.log(newM); // новый массив с  рандомными значениями
+let newM2 = newM.slice(); // клонировали  тот массив в этот
+console.log(newM2);
+newM2.sort((a, b) => a - b); // сортируем методом по возрастанию для получения max и min
+console.log(newM2); // смотрим результат
+minN = newM2[0]; // знаем min значение
+maxN = newM2[newM2.length - 1 ]; // знаем max значение
+console.log(minN);
+console.log(maxN);
+
 //  let sumN = (minN + maxN) - maxN;
-newM[0] = maxN;
-newM[newM.length - 1] = minN;
+for ( let i=0 ; i < newM.length;i++){
+    for( let j=0;j < newM2.length; j++){
+        if (newM[i] == minN){
+            newM[i] = maxN;
+        }
+        if (newM[i] == maxN){
+             newM[i] = minN;
+        }
+
+    }
+}
 console.log(newM);
 
- /// не знаю что делать дальше без 
 
 /*
 Задача на цикл while и метод массива
