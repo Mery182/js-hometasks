@@ -67,10 +67,18 @@ while(true) {
     let stringA = prompt('Введите название животного:');
     if ( stringA == '0' || stringA == '' || stringA == null) { // проверяем на валидность данных
         break;
+<<<<<<< HEAD
     } 
     if (animals.includes(stringA)){
         continue; // на новую итерацию отправляемся
     } 
         animals.push(stringA)
+=======
+    } else if (animals.includes(stringA)){
+        continue; // на новую итерацию отправляемся
+    } else {
+        animals.push(stringA)
+        }
+>>>>>>> 060351a8a8ac187e6767153db581c417bd8dcfd4
     console.log(animals);
 }
