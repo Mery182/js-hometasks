@@ -108,3 +108,5 @@ colors.splice(1, 2, 'greenyellow', 'silver');
 // slice
 // includes
 // concat
+
+/// находя
