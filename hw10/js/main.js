@@ -66,8 +66,6 @@ for (let x of Object.values(goods)) {
         count.innerHTML = "<span>Товара нет в наличии</span>";
     }
 
-
-
     card.append(title, img, price, count);
     cardsSection.append(card);
 }
@@ -76,22 +74,26 @@ let dd = document.querySelectorAll('.decrease'); // уменьшаем
 console.log(dd); // NodeList
 dd.forEach((elem) => { // перебор всей коллекции
     console.log(elem); // каждая кнопка с минусом 
+    let max = elem.nextElementSibling.innerHTML;
+    console.log(max);
      elem.addEventListener('click', function () { // назначаем каждому элементу коллекции событие click
-     elem.nextElementSibling.innerHTML--;
-    //   let v = document.querySelectorAll('.totalCount'); // отображение счета
-    //   v.forEach((item) => { 
-    //         item.innerHTML--;          
-    //   })
+        if(!(elem.nextElementSibling.innerHTML == 0)){ //  пока ${x.count} не равно 0 можно уменьшать
+        elem.nextElementSibling.innerHTML--;
+        }
     });
+    console.log(max);
+    
 });
 let yy = document.querySelectorAll('.increase'); // уменьшаем
 console.log(yy); // NodeList
 yy.forEach((elem) => { // перебор всей коллекции
-    console.log(elem); // каждая кнопка с минусом 
+    console.log(elem); // каждая кнопка с плюсом 
+  //  let max2 = elem.nextElementSibling.innerHTML;
+  let y = elem.previousElementSibling.innerHTML;
+console.log(y);
      elem.addEventListener('click', function () { // назначаем каждому элементу коллекции событие click
-      let v = document.querySelectorAll('.totalCount'); // отображение счета
-      v.forEach((item) => { 
-            item.innerHTML++;          
-      })
+        if(elem.previousElementSibling.innerHTML < y){
+        elem.previousElementSibling.innerHTML++;
+       }
     });
 });
