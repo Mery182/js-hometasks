@@ -1,0 +1,159 @@
+body {
+    margin: 50px 0;
+    padding: 0;
+    font-size: 1.3rem;
+   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+* {
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+}
+h4 {
+    margin: 10px 0;
+}
+#sectionformInfo{
+    text-align: center;
+    margin-bottom: 50px;
+}
+.task_blok {
+    margin: 20px auto;
+    width: 60%;
+    height: 50%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    box-shadow: 0 0 50px #0000000f;
+    border-radius: 8px;  
+}
+.task_blok p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+.task_blok span {
+    margin-top: 20px;
+    font-size: 0.8rem;
+    font-weight: 900;
+    color: #26c4c8;
+}
+.bg_color {
+    background-color: #26cbcc40;
+    transition-duration: 0.5s;
+}
+/* start form style */
+form {
+    margin: 50px auto;
+    width: 60%;
+    height: 50%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 50px #0000000f;
+    border-radius: 8px;  
+}
+
+form span {
+    font-size: 0.8rem;
+    color: #26c4c8;
+    text-align: right;
+    margin-bottom: 1rem;
+}
+form  > div {
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 1rem;
+ align-items: baseline;
+}
+
+form input{
+    width: 60%;
+    height: 2rem;
+    /* border-radius:8px; */
+    border-style: none;
+    border-bottom: 1px solid black;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+form textarea {
+    width: 60%;
+    height: 2,5rem;
+    border-radius:3px; 
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+ 
+}
+form label {
+    font-size: 1rem;
+}
+form input:required:not(:focus){
+    border-color: #00d5ff;
+}
+/* start add blok */
+#add {
+    width: 100%;
+ display: flex;
+ justify-content: flex-start;
+ flex-wrap: wrap;
+
+}
+#add .this-input{
+    width: 300px;
+    margin:  10px;
+ 
+}
+.display-none {
+    display: none;
+}
+/* start  x */
+.close::before {
+    content:"x";
+    font-size: 30px; 
+    color: #00d5ff;
+    
+} 
+
+/*   */
+@media screen and (max-width:786px){
+    form {
+   width: 95%;
+    }
+    form  > div {
+    flex-direction: column;
+    width: 100%;
+    }
+    form input, textarea{
+        width: 100%;
+}
+    form label {
+    display: none;
+    }
+}
+/* start button style */
+ .btn-grad {
+     background-image: linear-gradient(to right, #1A2980 0%, #26D0CE  51%, #1A2980  100%)
+    }
+ .btn-grad {
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 8px;
+    display: block;
+    border-style: none;
+    cursor: pointer;
+    
+  }
+  .btn-grad:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+  .delete_button {
+      margin: 0 auto;
+  }
+ /* the end */
+

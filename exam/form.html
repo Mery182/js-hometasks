@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <link rel="stylesheet" href="css/form-style.css">
+</head>
+<body>
+    
+
+<form name="add_task" novalidate>
+ <div>
+<h2>Добавление задачи</h2>
+<span id="success_message"></span>
+</div>
+<!--  -->
+<div>
+<label for="name_task">Название задачи</label>
+<input name="name_tast" type="text" placeholder="Введите название задачи" minlength="1" maxlength="20" required>
+</div>
+<span id="error_name"></span>
+<!--  -->
+<div>
+<label for="textarea">Введите описание задачи</label>
+<textarea name="text" placeholder="Введите описание задачи" rows="5"></textarea>
+</div>
+<!--  -->
+<div>
+<label for="time">Срок выполнения задачи</label>
+<input name="time" type="datetime-local">
+</div>
+<span id="error_data"></span>
+<!--  -->
+ <div>
+    <button id="add-person" class="btn-grad">Добавить участника</button>
+</div> 
+<div id="add">
+  
+</div>
+    <button class="btn-grad" type="submit">Добавить задачу</button>
+</form>
+
+    <script src="js/form-js.js"></script>
+</body>
+</html>
