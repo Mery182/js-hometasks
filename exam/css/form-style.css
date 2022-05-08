@@ -115,6 +115,9 @@ form input:required:not(:focus){
 
 /*   */
 @media screen and (max-width:786px){
+    .task_blok {
+        width: 90%;
+    }
     form {
    width: 95%;
     }
@@ -122,8 +125,11 @@ form input:required:not(:focus){
     flex-direction: column;
     width: 100%;
     }
-    form input, textarea{
+    form input{
         width: 100%;
+}
+div textarea {
+    width: 100%;
 }
     form label {
     display: none;
