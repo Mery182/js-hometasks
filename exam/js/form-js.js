@@ -8,9 +8,14 @@ let allForm = document.forms.add_task; // вся форма
 let nameInput = allForm.elements.name_tast; // значение поля name
 let textArea = allForm.elements.text; // значение textArea
 let timeInput = allForm.elements.time; // поле Data
+
+let persone = document.getElementsByName('pers'); // поле для ввода участников
+let persone2 =[];
+
 let t = document.getElementById('error_name');
 let s = document.getElementById('success_message');
 let v = document.getElementById('error_data');
+let e = document.getElementById('enough');
 let sectionAdd = document.getElementById('add');
 let alltrGet = [];
 console.log(sectionAdd);
@@ -18,36 +23,46 @@ let add = document.getElementById('add-person');
 console.log(add);
 
 /// 
-add.addEventListener('click', function (e) {
-    let persone = allForm.elements.pers;
+add.addEventListener('click', function (e) {  // добавление участника
+    e.preventDefault();
     let allbl = document.createElement('div');
-
     let l = document.createElement('input');
     l.classList.add('this-input');
     let inI = document.querySelector('.this-input');
+     if(persone.length > 2){  // больше трех добавить нельзя
+      add.removeEventListener();
+      allbl.append(e);
+      e.innerHTML ='Больше трех добавить нельзя';      
+     };
+
     l.setAttribute('placeholder', 'Введите имя участника')
     l.setAttribute('name', 'pers');
     l.setAttribute('type', 'text');
-    // недописала
-
-    let d = document.createElement('span');
+    let d = document.createElement('span'); // добавяем крестик
     d.classList.add('close');
 
     // alltrGet.push(trGet);
     sectionAdd.append(allbl);
     allbl.prepend(l, d);
-
-    d.addEventListener('click', function () {
-        allbl.remove();
+    d.addEventListener('click', function (e) {
+        this.parentElement.remove(); // удаляемродителя в который крестик вложен
     });
 })
 
 /////
+
 console.log(v);
 let objectInput = {}; // создаем объект пустой
-
-allForm.addEventListener('submit', function (e) {
-    e.preventDefault();
+ 
+allForm.addEventListener('submit', function (e) {  // отправка формы
+     e.preventDefault();
+     persone.forEach(el =>{
+       
+         if(!(el == '')){
+            persone2.push(el.value);
+         } 
+     })
+    
 
     let nowTime = new Date(); // получаем текущее время
     let nowTimeParse = Date.parse(nowTime); // преобразовываем текущее время в милисекунды
@@ -80,12 +95,13 @@ allForm.addEventListener('submit', function (e) {
         s.innerHTML = 'Задача была успешно добавлена';
         v.innerHTML = '';
         t.innerHTML = '';
+
         objectInput = {
             title: `${nameInput.value}`,
             description: `${textArea.value}`,
             date: `${timeInput.value}`,
-
-        };
+           man: persone2
+    };
         console.log(objectInput);
         if (xForm) { // если есть данные
             xForm = JSON.parse(xForm); // преобразовавыаем
