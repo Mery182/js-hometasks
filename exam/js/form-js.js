@@ -16,7 +16,7 @@ let man_array = [];
 let t = document.getElementById('error_name');
 let s = document.getElementById('success_message');
 let v = document.getElementById('error_data');
-let e = document.getElementById('enough');
+let en = document.getElementById('enough');
 let sectionAdd = document.getElementById('add');
 let alltrGet = [];
 console.log(sectionAdd);
@@ -31,9 +31,9 @@ add.addEventListener('click', function (e) { // добавление участ�
     l.classList.add('this-input');
     let inI = document.querySelector('.this-input');
     if (persone.length > 2) { // больше трех добавить нельзя
+        en.innerHTML = 'Больше трех добавить нельзя';
         add.removeEventListener();
-        allbl.append(e);
-        e.innerHTML = 'Больше трех добавить нельзя';
+       
     };
 
     l.setAttribute('placeholder', 'Введите имя участника')
