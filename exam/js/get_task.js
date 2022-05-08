@@ -2,7 +2,6 @@
 
 // добавление объекта на страницу
 
-
 let creatNewSection = document.getElementById('sectionformInfo');
 let getFormInfo = localStorage.getItem('xForm'); // получили весь массив
 getFormInfo = JSON.parse(getFormInfo);
@@ -34,11 +33,11 @@ if (!getFormInfo.length) { // если пуст LocalStorage
     creatNewSection.prepend(blok); // добавляем в самое начало 
     blok.append(h, txt, spn);
 
-    // if(x.man != ""){
-    //   spn22 = document.createElement('span'); // создаем span
-    //   spn22.innerHTML = `Участники: ${x.man}`;
-    //   blok.prepend(spn22);
-    //   }
+    if(x.man != ""){
+      spn22 = document.createElement('span'); // создаем span
+      spn22.innerHTML = `Участники: ${x.man}`;
+      blok.append(spn22); // добавляем в конец самый
+      }
 
     blok.addEventListener('click', function (e) {
       let click = e.currentTarget; // получаем событие
