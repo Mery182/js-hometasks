@@ -25,8 +25,8 @@ if (!getFormInfo.length) { // если пуст LocalStorage
     h = document.createElement('h4'); // создаем заголовок
     txt = document.createElement('p'); // создаем параграф
     spn = document.createElement('span'); // создаем span
-
-    spn.innerHTML = `Выполнить к: ${x.date}`;
+    console.log(x.date.slice(0,10));
+    spn.innerHTML = `Выполнить к: ${x.date.slice(0,10)}`;
     txt.innerHTML = x.description;
     h.innerHTML = x.title;
 
